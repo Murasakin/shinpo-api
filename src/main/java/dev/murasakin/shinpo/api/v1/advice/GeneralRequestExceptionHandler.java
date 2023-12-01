@@ -2,6 +2,7 @@ package dev.murasakin.shinpo.api.v1.advice;
 
 import dev.murasakin.shinpo.api.v1.model.ApiResponseModel;
 import dev.murasakin.shinpo.api.v1.model.GeneralExceptionModel;
+import dev.murasakin.shinpo.application.exception.NotFoundApplicationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -27,5 +28,19 @@ public class GeneralRequestExceptionHandler extends ResponseEntityExceptionHandl
         ApiResponseModel<GeneralExceptionModel> responseModel = ApiResponseModel.buildErrorResponse(model);
 
         return new ResponseEntity<>(responseModel, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(NotFoundApplicationException.class)
+    public final ResponseEntity<ApiResponseModel<GeneralExceptionModel>> handleNotFoundException(
+            Exception ex, WebRequest request) {
+        GeneralExceptionModel model = new GeneralExceptionModel(
+                LocalDateTime.now(),
+                ex.getMessage(),
+                request.getDescription(false)
+        );
+
+        ApiResponseModel<GeneralExceptionModel> responseModel = ApiResponseModel.buildErrorResponse(model);
+
+        return new ResponseEntity<>(responseModel, HttpStatus.NOT_FOUND);
     }
 }
