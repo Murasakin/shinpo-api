@@ -1,1 +1,12 @@
-
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/shinpo_db?useTimezone=true&serverTimezone=UTC
+    username: shinpo_admin
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+      show-sql: false
