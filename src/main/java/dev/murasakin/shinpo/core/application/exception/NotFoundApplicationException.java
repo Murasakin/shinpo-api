@@ -1,4 +1,4 @@
-package dev.murasakin.shinpo.application.exception;
+package dev.murasakin.shinpo.core.application.exception;
 
 public class NotFoundApplicationException extends RuntimeException {
     public NotFoundApplicationException(String message) {

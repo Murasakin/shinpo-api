@@ -10,3 +10,9 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
       show-sql: false
+
+application-values:
+  regex:
+    email: ^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$
+    username: ^[a-zA-Z0-9._]{5,}$
+    password: ^(?=.*[0-9])(?=.*[a-z])(?=.*[@#$%^&+=])(?=\S+$).{15,}$
