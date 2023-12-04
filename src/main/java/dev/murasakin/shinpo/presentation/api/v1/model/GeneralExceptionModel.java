@@ -1,4 +1,4 @@
-package dev.murasakin.shinpo.api.v1.model;
+package dev.murasakin.shinpo.presentation.api.v1.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

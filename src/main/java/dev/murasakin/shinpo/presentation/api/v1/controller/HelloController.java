@@ -1,6 +1,6 @@
-package dev.murasakin.shinpo.api.v1.controller;
+package dev.murasakin.shinpo.presentation.api.v1.controller;
 
-import dev.murasakin.shinpo.api.v1.model.ApiResponseModel;
+import dev.murasakin.shinpo.presentation.api.v1.model.ApiResponseModel;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
